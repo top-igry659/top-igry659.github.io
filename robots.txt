@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://top-igry659.github.io/sitemap.xml

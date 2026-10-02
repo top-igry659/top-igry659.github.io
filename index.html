@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Топ игр 2026 — словарь RTP, волатильности, механик и сертификатов</title>
+<meta name="description" content="Справочник терминов, по которым собирают топ игр: RTP и его версии, волатильность и дисперсия, hit frequency, max win, бай-бонус, Megaways, Hold & Win, сертификат лаборатории, провабли фэйр. 2026 год.">
+<link rel="canonical" href="https://top-igry659.github.io/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Топ игр 2026: словарь метрик и механик, по которым читают рейтинги слотов">
+<meta property="og:description" content="Что означают RTP, его версия, волатильность, дисперсия, hit frequency, max win, бай-бонус, Megaways, Hold & Win, сертификат лаборатории и провабли фэйр в топах игр. Схемы, таблицы, ответы на вопросы.">
+<meta property="og:url" content="https://top-igry659.github.io/">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --fog:#e7ebf2;--sheet:#f7f9fc;--sheet-2:#dde3ec;--raise:#ffffff;
+  --ink:#141b2b;--ink-2:#45506a;--ink-3:#6b7589;--rule:#ccd4e2;--rule-2:#a4afc3;
+  --navy:#27406b;--navy-deep:#1b2f52;--navy-wash:#dce6f5;--on-navy:#f3f7ff;
+  --pos:#1f6d55;--pos-wash:#d7eae2;--neg:#a23a30;--neg-wash:#f1ddd9;--warn:#856317;--warn-wash:#efe6cd;
+  --s1:#27406b;--s2:#4b7bb5;--s3:#1f6d55;--s4:#b5692a;--s5:#7a4fa3;--bar-dim:#d4dae5;
+  --ff-serif:"Cormorant Garamond","Palatino Linotype","Georgia",serif;
+  --ff-sans:"Inter","Segoe UI",Roboto,system-ui,sans-serif;
+  --sz-h1:clamp(2.4rem,1.7rem + 3vw,3.9rem);--sz-h2:clamp(1.75rem,1.4rem + 1.5vw,2.5rem);--sz-h3:1.2rem;
+  --sz-lead:clamp(1.08rem,1.01rem + .34vw,1.24rem);--sz-text:1.05rem;--sz-ui:.94rem;--sz-note:.86rem;--sz-tiny:.77rem;
+  --read:730px;--read-wide:1080px;--pad:clamp(16px,4vw,30px);--gap:clamp(44px,6vw,84px);
+  --rad:4px;--rad-lg:10px;
+  --drop-1:0 1px 2px rgba(20,27,43,.07);--drop-2:0 10px 30px -16px rgba(20,27,43,.32);
+  --speed:170ms;--arc:cubic-bezier(.2,.75,.3,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fog:#0d121c;--sheet:#141b28;--sheet-2:#1d2636;--raise:#212b3d;
+  --ink:#e4e9f2;--ink-2:#afb9ca;--ink-3:#808b9f;--rule:#273145;--rule-2:#404c63;
+  --navy:#80a6dd;--navy-deep:#a7c3ef;--navy-wash:#192741;--on-navy:#0b1220;
+  --pos:#5fbd9c;--pos-wash:#153028;--neg:#df8277;--neg-wash:#37201d;--warn:#d3ab52;--warn-wash:#302815;
+  --s1:#6f9fe0;--s2:#8fb6e8;--s3:#5fbd9c;--s4:#d79255;--s5:#ab8ae0;--bar-dim:#2a3446;
+  --drop-1:0 1px 2px rgba(0,0,0,.5);--drop-2:0 12px 32px -18px rgba(0,0,0,.7);
+  color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --fog:#0d121c;--sheet:#141b28;--sheet-2:#1d2636;--raise:#212b3d;
+  --ink:#e4e9f2;--ink-2:#afb9ca;--ink-3:#808b9f;--rule:#273145;--rule-2:#404c63;
+  --navy:#80a6dd;--navy-deep:#a7c3ef;--navy-wash:#192741;--on-navy:#0b1220;
+  --pos:#5fbd9c;--pos-wash:#153028;--neg:#df8277;--neg-wash:#37201d;--warn:#d3ab52;--warn-wash:#302815;
+  --s1:#6f9fe0;--s2:#8fb6e8;--s3:#5fbd9c;--s4:#d79255;--s5:#ab8ae0;--bar-dim:#2a3446;
+  --drop-1:0 1px 2px rgba(0,0,0,.5);--drop-2:0 12px 32px -18px rgba(0,0,0,.7);
+  color-scheme:dark;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fog);color:var(--ink);font:400 var(--sz-text)/1.62 var(--ff-sans);-webkit-font-smoothing:antialiased}
+p{margin:0 0 .9em;text-wrap:pretty}
+.lgt-serif,h1,h2,h3{font-family:var(--ff-serif)}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance;letter-spacing:.002em}
+h1{font-size:var(--sz-h1);line-height:1.04}
+h2{font-size:var(--sz-h2);line-height:1.12}
+h3{font-size:var(--sz-h3);line-height:1.3;font-family:var(--ff-sans);font-weight:700;letter-spacing:0}
+a{color:var(--navy);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;transition:color var(--speed) var(--arc)}
+a:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+::selection{background:var(--navy-wash)}
+.lgt-fig-num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.lgt-read{width:min(100% - 2*var(--pad),var(--read));margin-inline:auto}
+.lgt-wide{width:min(100% - 2*var(--pad),var(--read-wide));margin-inline:auto}
+section[id],div[id]{scroll-margin-top:14px}
+strong{font-weight:700;color:var(--ink)}
+
+/* верхняя планка */
+.lgt-top{background:var(--sheet);border-bottom:1px solid var(--rule)}
+.lgt-top-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}
+.lgt-mark{font-family:var(--ff-serif);font-weight:700;font-size:1.3rem;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;letter-spacing:.01em}
+.lgt-mark svg{width:26px;height:26px;flex:none}
+.lgt-toggle{border:1px solid var(--rule-2);background:transparent;color:var(--ink-2);border-radius:var(--rad);padding:7px 13px;font:600 var(--sz-ui)/1 var(--ff-sans);cursor:pointer;transition:background var(--speed) var(--arc),color var(--speed) var(--arc)}
+.lgt-toggle:hover{background:var(--sheet-2);color:var(--ink)}
+.lgt-top-nav{display:flex;flex-wrap:wrap;gap:3px 20px;padding:0 0 11px;font-size:var(--sz-ui)}
+.lgt-top-nav a{color:var(--ink-2);text-decoration:none;padding:3px 0;border-bottom:2px solid transparent}
+.lgt-top-nav a:hover{color:var(--ink);border-bottom-color:var(--navy)}
+
+/* титул */
+.lgt-head{padding:var(--gap) 0 calc(var(--gap) * .62)}
+.lgt-dateline{font-size:var(--sz-note);color:var(--ink-3);letter-spacing:.02em;margin-bottom:18px}
+.lgt-dateline b{color:var(--ink-2);font-weight:600}
+.lgt-head h1{max-inline-size:17ch;margin-bottom:22px}
+.lgt-lede{font-size:var(--sz-lead);line-height:1.5;color:var(--ink-2);max-inline-size:62ch}
+.lgt-lede strong{color:var(--ink)}
+.lgt-layers{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--rule);padding-top:26px}
+.lgt-layers h2{font-size:1.02rem;font-family:var(--ff-sans);font-weight:700;grid-column:1/-1;margin-bottom:-6px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;font-size:var(--sz-note)}
+.lgt-layer{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--rad-lg);padding:16px 18px}
+.lgt-layer .lgt-tier{font-family:var(--ff-serif);font-size:1.5rem;font-weight:700;color:var(--navy);display:block;line-height:1}
+.lgt-layer h3{margin:8px 0 5px;font-size:1.02rem}
+.lgt-layer p{margin:0;font-size:var(--sz-ui);color:var(--ink-2)}
+
+/* полоса-указатель терминов */
+.lgt-ribbon{background:var(--navy-deep);color:var(--on-navy);padding:20px 0}
+:root[data-theme="dark"] .lgt-ribbon{background:var(--sheet-2);color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lgt-ribbon{background:var(--sheet-2);color:var(--ink)}}
+.lgt-ribbon p{margin:0 0 10px;font-size:var(--sz-note);opacity:.8;letter-spacing:.03em}
+.lgt-ribbon ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px 8px}
+.lgt-ribbon a{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--rad);padding:5px 11px;font-size:var(--sz-ui);color:inherit;text-decoration:none;transition:background var(--speed) var(--arc)}
+.lgt-ribbon a:hover{background:rgba(255,255,255,.2)}
+:root[data-theme="dark"] .lgt-ribbon a{background:var(--raise);border-color:var(--rule-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lgt-ribbon a{background:var(--raise);border-color:var(--rule-2)}}
+
+/* раздел */
+.lgt-part{padding:var(--gap) 0;border-top:1px solid var(--rule)}
+.lgt-part:nth-of-type(even){background:var(--sheet)}
+.lgt-kicker{font-size:var(--sz-note);letter-spacing:.09em;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:10px}
+.lgt-part h2{margin-bottom:18px;max-inline-size:24ch}
+.lgt-answer{font-size:var(--sz-lead);line-height:1.5;color:var(--ink);margin-bottom:1.1em;padding-left:16px;border-left:3px solid var(--navy)}
+
+/* врезка-определения внутри раздела */
+.lgt-aside{margin:26px 0;background:var(--navy-wash);border-radius:var(--rad-lg);padding:18px 20px}
+.lgt-aside h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--navy);margin:0 0 12px}
+.lgt-aside dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.lgt-aside dt{font-weight:700;color:var(--ink);font-size:var(--sz-ui)}
+.lgt-aside dd{margin:0;font-size:var(--sz-ui);color:var(--ink-2)}
+
+/* фигура: svg + таблица-дублёр */
+.lgt-plate{margin:30px 0;background:var(--raise);border:1px solid var(--rule);border-radius:var(--rad-lg);padding:20px 22px 16px;box-shadow:var(--drop-1)}
+.lgt-plate svg{display:block;width:100%;height:auto;font-family:var(--ff-sans)}
+.lgt-plate figcaption{font-size:var(--sz-note);color:var(--ink-3);margin:12px 0 0;line-height:1.46}
+.lgt-mirror{overflow-x:auto;margin-top:16px;border-top:1px solid var(--rule);padding-top:14px}
+table{border-collapse:collapse;width:100%;font-size:var(--sz-ui);line-height:1.4}
+caption{text-align:left;font-family:var(--ff-sans);font-weight:700;padding:0 0 9px;color:var(--ink)}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;color:var(--ink-2);font-size:var(--sz-note);background:var(--sheet-2)}
+td.lgt-n{font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.lgt-tag{font-weight:700}
+.lgt-tag.a{color:var(--s1)}.lgt-tag.b{color:var(--s3)}.lgt-tag.c{color:var(--s4)}.lgt-tag.d{color:var(--s5)}.lgt-tag.e{color:var(--neg)}
+
+/* отдельная таблица без графика */
+.lgt-table{overflow-x:auto;margin:24px 0;border:1px solid var(--rule);border-radius:var(--rad-lg);background:var(--raise)}
+.lgt-table table{min-width:540px}
+.lgt-table caption{padding:13px 15px 7px}
+.lgt-table th:first-child,.lgt-table td:first-child{position:sticky;left:0;background:var(--raise)}
+.lgt-table th:first-child{background:var(--sheet-2)}
+
+/* словарные статьи */
+.lgt-defs{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:2px 30px;margin-top:14px}
+.lgt-def{padding:15px 0;border-top:1px solid var(--rule)}
+.lgt-def h3{margin:0 0 5px;font-size:1.04rem}
+.lgt-def h3 span{font-family:var(--ff-sans);font-weight:400;font-size:var(--sz-note);color:var(--ink-3);margin-left:7px}
+.lgt-def p{font-size:var(--sz-ui);margin:0;color:var(--ink-2)}
+
+/* вопросы */
+.lgt-q{border-top:1px solid var(--rule);padding:2px 0}
+.lgt-q:last-of-type{border-bottom:1px solid var(--rule)}
+.lgt-q summary{cursor:pointer;font-family:var(--ff-serif);font-weight:700;font-size:1.2rem;padding:14px 36px 14px 0;position:relative;list-style:none}
+.lgt-q summary::-webkit-details-marker{display:none}
+.lgt-q summary::after{content:"+";position:absolute;right:4px;top:12px;font-family:var(--ff-sans);font-weight:400;font-size:1.4rem;color:var(--navy);transition:transform var(--speed) var(--arc)}
+.lgt-q[open] summary::after{transform:rotate(45deg)}
+.lgt-a{padding:0 0 16px;color:var(--ink-2)}
+.lgt-a p{margin:0}
+
+/* забота, канал, подвал */
+.lgt-care{padding:calc(var(--gap) * .55) 0;background:var(--warn-wash);border-top:1px solid var(--rule)}
+.lgt-care p{margin:0;font-size:var(--sz-ui);color:var(--ink)}
+.lgt-channel{padding:var(--gap) 0;border-top:1px solid var(--rule)}
+.lgt-channel h2{margin-bottom:14px}
+.lgt-channel-link{display:inline-block;margin-top:10px;background:var(--navy);color:var(--on-navy);text-decoration:none;padding:12px 22px;border-radius:var(--rad);font-weight:600;transition:background var(--speed) var(--arc)}
+.lgt-channel-link:hover{background:var(--navy-deep)}
+:root[data-theme="dark"] .lgt-channel-link{color:var(--on-navy)}
+.lgt-foot{background:var(--navy-deep);color:#c6d2e6;padding:34px 0;font-size:var(--sz-note);line-height:1.56}
+:root[data-theme="dark"] .lgt-foot{background:var(--sheet);color:var(--ink-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lgt-foot{background:var(--sheet);color:var(--ink-2)}}
+.lgt-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+.lgt-foot h3{font-family:var(--ff-sans);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin:0 0 9px}
+:root[data-theme="dark"] .lgt-foot h3{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lgt-foot h3{color:var(--ink)}}
+.lgt-foot p{margin:0 0 7px}
+.lgt-foot a{color:inherit}
+
+@media (max-width:860px){
+  .lgt-layers{grid-template-columns:1fr}
+  .lgt-foot-grid{grid-template-columns:1fr}
+  .lgt-aside dl{grid-template-columns:1fr}
+  .lgt-aside dt{margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:1ms!important;scroll-behavior:auto!important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://top-igry659.github.io/#page","headline":"Топ игр 2026: словарь метрик и механик, по которым читают рейтинги слотов","description":"Справочник терминов, по которым собирают топ игр: RTP и его версии, волатильность и дисперсия, hit frequency, max win, бай-бонус, Megaways, Hold & Win, сертификат лаборатории, провабли фэйр. 2026 год.","inLanguage":"ru","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Organization","name":"Редакция «Легенда таблицы»"},"publisher":{"@type":"Organization","name":"Легенда таблицы"},"mainEntityOfPage":"https://top-igry659.github.io/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://top-igry659.github.io/#faq","mainEntity":[
+{"@type":"Question","name":"Что в топе игр важнее — высокий RTP или низкая волатильность?","acceptedAnswer":{"@type":"Answer","text":"Эти два числа отвечают на разные вопросы и не заменяют друг друга. RTP описывает долю возврата на длинной дистанции в миллионы вращений, волатильность — разброс результата в пределах одной сессии. Автомат с RTP 96,5 % и экстремальной волатильностью на коротком отрезке ведёт себя беднее, чем автомат с RTP 95,5 % и низкой волатильностью, потому что в первом почти весь возврат заперт в редких крупных событиях. В топе, собранном под короткую сессию, вес смещают к волатильности и частоте попаданий; в топе под отыгрыш бонуса — к RTP и потолку ставки. Поэтому колонку с весами нужно читать раньше, чем сам список."}},
+{"@type":"Question","name":"Почему у одной игры бывает несколько значений RTP?","acceptedAnswer":{"@type":"Answer","text":"Студии выпускают один и тот же автомат в нескольких математических сборках, и оператор при подключении выбирает, какую поставить. У Pragmatic Play и Playson расхождение между версиями доходит до шести процентных пунктов — например, 96,5 %, 95,5 %, 94,0 % и ниже у одной игры. Внешне тайтл не меняется: те же символы, та же анимация, тот же максимум. Действующее значение написано в разделе правил самой игры, под строкой Return to player или «теоретический возврат». Если в топе указан RTP без пометки версии, число относится к эталонной сборке провайдера, а не обязательно к той, что стоит у конкретного оператора."}},
+{"@type":"Question","name":"Max win указан в ставках — это сколько в рублях?","acceptedAnswer":{"@type":"Answer","text":"Потолок выигрыша в карточке игры задаётся в единицах ставки, а не в валюте, потому что он одинаков для любого номинала. Запись «макс. 5000x» означает, что максимальный результат одного оплаченного раунда ограничен пятью тысячами ставок: при ставке 20 ₽ это 100 000 ₽, при ставке 100 ₽ — 500 000 ₽. Когда расчётный выигрыш упирается в потолок, игра прекращает начисление и завершает раунд на этой сумме, даже если механика продолжала бы умножать. Отдельно от потолка игры у оператора бывает лимит на вывод за период — это другое число, и в карточке автомата его нет."}},
+{"@type":"Question","name":"Megaways — это отдельная игра или механика?","acceptedAnswer":{"@type":"Answer","text":"Megaways — это запатентованный движок барабанов студии Big Time Gaming, который другие провайдеры берут по лицензии. На каждом вращении число символов в шести барабанах меняется от двух до семи, и количество способов собрать комбинацию пересчитывается, доходя до 117 649. Это механика, а не конкретный тайтл: под маркой Megaways выходят сотни разных игр у разных студий. Общее у них одно — переменное число линий и, как следствие, высокая волатильность и высокий потолок. Поэтому в карте механик Megaways-релизы сдвинуты в правый верхний угол: редкие, но крупные события."}},
+{"@type":"Question","name":"Бай-бонус увеличивает шанс на крупный занос?","acceptedAnswer":{"@type":"Answer","text":"Нет. Кнопка покупки бонуса меняет не вероятности внутри бонусного раунда, а способ в него попасть: вместо ожидания трёх скаттеров игрок платит фиксированную цену, обычно от 75 до 100 ставок, и входит в раунд сразу. Математика самого раунда остаётся прежней, а RTP режима покупки у большинства студий на доли процента отличается от базового в любую сторону. Что покупка меняет точно — это дисперсию: короткие серии дорогих покупок дают более резкий разброс, чем те же деньги, растянутые на обычные вращения. В Великобритании и Нидерландах покупка бонуса запрещена правилами регулятора, поэтому в сборках для этих рынков кнопки нет."}},
+{"@type":"Question","name":"Как понять, что игра в топе запущена с сервера оригинальной студии?","acceptedAnswer":{"@type":"Answer","text":"Оригинальный тайтл загружается в кадре (iframe) с домена провайдера или его официального агрегатора, а в меню игры есть страница правил с таблицей выплат и указанием RTP. Проверить адрес кадра можно через инструменты разработчика браузера или открыв игру в отдельной вкладке. У скриптовой копии домен случайный, таблица выплат урезана или отсутствует, логотип студии часто искажён, а заявленный в списке RTP проверить негде. Копия опасна тем, что её математику переписали, и ни сертификат лаборатории, ни заявленный возврат к ней не относятся."}},
+{"@type":"Question","name":"Чем провабли фэйр отличается от сертификата лаборатории?","acceptedAnswer":{"@type":"Answer","text":"Это два разных способа доказать честность результата. Сертификат независимой лаборатории — GLI, eCOGRA, iTech Labs или BMM Testlabs — подтверждает, что генератор случайных чисел прошёл проверку по стандарту вроде GLI-19 и что заявленный RTP соответствует математике; доверие здесь к аудитору. Провабли фэйр (provably fair) переносит проверку на игрока: до раунда сервер показывает хеш своего зерна, игрок добавляет своё, а после раунда может сам пересчитать результат и убедиться, что зерно не подменили. Первый механизм распространён у игр с лицензией, второй — у криптовалютных игр, и одно не отменяет другого."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="lgt-top">
+  <div class="lgt-wide">
+    <div class="lgt-top-row">
+      <a class="lgt-mark" href="#top" aria-label="Легенда таблицы — к началу">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="var(--navy-deep)"/><rect x="12" y="16" width="14" height="6" rx="2" fill="var(--s2)"/><rect x="12" y="29" width="14" height="6" rx="2" fill="var(--s3)"/><rect x="12" y="42" width="14" height="6" rx="2" fill="var(--s4)"/><rect x="31" y="16" width="21" height="6" rx="2" fill="#dde6f5" opacity="0.7"/><rect x="31" y="29" width="17" height="6" rx="2" fill="#dde6f5" opacity="0.7"/><rect x="31" y="42" width="12" height="6" rx="2" fill="#dde6f5" opacity="0.7"/></svg>
+        Легенда
+      </a>
+      <button class="lgt-toggle" type="button" id="lgt-toggle" aria-label="Переключить светлую и тёмную тему">Тема</button>
+    </div>
+    <nav class="lgt-top-nav" aria-label="Разделы словаря">
+      <a href="#map">Карта механик</a>
+      <a href="#rtp">Отдача</a>
+      <a href="#risk">Риск</a>
+      <a href="#cap">Потолок</a>
+      <a href="#mech">Механики</a>
+      <a href="#buy">Бай-бонус</a>
+      <a href="#origin">Происхождение</a>
+      <a href="#proof">Демо и проверка</a>
+      <a href="#az">Словарь А–Я</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="lgt-head">
+  <div class="lgt-wide">
+    <p class="lgt-dateline lgt-fig-num">Обновлено <b>1 октября 2026</b> · Москва · редакция «Легенда таблицы»</p>
+    <h1>Топ игр 2026: как читать рейтинг слотов по его метрикам</h1>
+    <p class="lgt-lede">Любая подборка «топ игр» держится на десятке чисел и ярлыков: <strong>RTP</strong> и его версия, <strong>волатильность</strong> и дисперсия, частота попаданий, <strong>max win</strong>, тип механики, цена бай-бонуса, кто студия и кем проверен генератор. Этот справочник объясняет каждый термин так, чтобы колонки чужого списка читались без веры автору на слово. Условных брендов, рейтинговых мест и партнёрских ссылок здесь нет — только значения, по которым любой список собирается и проверяется.</p>
+
+    <div class="lgt-layers" aria-label="Три уровня чтения списка">
+      <h2>Три слоя, из которых складывается место в списке</h2>
+      <div class="lgt-layer">
+        <span class="lgt-tier">1</span>
+        <h3>Математика</h3>
+        <p>RTP, его версия, волатильность и потолок — то, что задано студией и не зависит от оформления карточки.</p>
+      </div>
+      <div class="lgt-layer">
+        <span class="lgt-tier">2</span>
+        <h3>Механика</h3>
+        <p>Линии, Ways, Megaways, cluster pays, Hold &amp; Win, бай-бонус — форма, которая объясняет разброс результата.</p>
+      </div>
+      <div class="lgt-layer">
+        <span class="lgt-tier">3</span>
+        <h3>Происхождение</h3>
+        <p>Студия, сертификат лаборатории, домен сервера, провабли фэйр — то, что отвечает за доверие к первым двум слоям.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="lgt-ribbon" aria-label="Указатель терминов">
+  <div class="lgt-wide">
+    <p>Указатель терминов рейтинга — по алфавиту</p>
+    <ul>
+      <li><a href="#d-buy">Buy feature</a></li>
+      <li><a href="#d-cluster">Cluster pays</a></li>
+      <li><a href="#d-dispersion">Дисперсия</a></li>
+      <li><a href="#d-demo">Демо</a></li>
+      <li><a href="#d-gli">GLI-19</a></li>
+      <li><a href="#d-hit">Hit frequency</a></li>
+      <li><a href="#d-holdwin">Hold &amp; Win</a></li>
+      <li><a href="#d-lab">Лаборатория</a></li>
+      <li><a href="#d-maxwin">Max win</a></li>
+      <li><a href="#d-megaways">Megaways</a></li>
+      <li><a href="#d-paytable">Paytable</a></li>
+      <li><a href="#d-fair">Provably fair</a></li>
+      <li><a href="#d-provider">Провайдер</a></li>
+      <li><a href="#d-rng">RNG</a></li>
+      <li><a href="#d-rtp">RTP</a></li>
+      <li><a href="#d-version">Версия RTP</a></li>
+      <li><a href="#d-volatility">Волатильность</a></li>
+      <li><a href="#d-ways">Ways</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="lgt-part" id="map">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 1 · обзор</p>
+    <h2>Из чего собирают топ игр: карта «тип механики → риск и потенциал»</h2>
+    <p class="lgt-answer">Место в списке редко присуждают по одному числу. Автор берёт группу метрик, назначает каждой вес и складывает. Чтобы читать результат, достаточно понимать две оси, вдоль которых расходятся почти все слоты: как сильно скачет результат (волатильность) и каков потолок редкого крупного события (max win). Остальные термины уточняют положение точки между этими осями.</p>
+    <p>Механика барабанов задаёт обе координаты сразу. Классические автоматы с фиксированными линиями платят часто и понемногу — точка внизу слева. Движки с переменным числом способов, вроде Megaways, запирают почти весь возврат в редкие крупные совпадения — точка вверху справа. Между ними лежат Ways-автоматы, выплаты кластерами и респиновые механики Hold&nbsp;&amp;&nbsp;Win, у которых потолок обычно зафиксирован джекпотом. Карта ниже расставляет шесть типовых механик по этим двум осям; числа усреднены по открытым описаниям релизов крупных студий и у конкретного тайтла будут другими.</p>
+
+    <figure class="lgt-plate" id="plate-map">
+      <svg viewBox="0 0 760 430" role="img" aria-labelledby="map-t map-d">
+        <title id="map-t">Карта типов механик по волатильности и потолку выигрыша</title>
+        <desc id="map-d">Точечная карта: по горизонтали — волатильность от низкой до экстремальной, по вертикали — потолок выигрыша в ставках по логарифмической шкале; шесть типов механик расставлены по этим двум осям.</desc>
+        <!-- оси -->
+        <line x1="90" y1="40" x2="90" y2="345" stroke="var(--rule-2)" stroke-width="1.5"/>
+        <line x1="90" y1="345" x2="700" y2="345" stroke="var(--rule-2)" stroke-width="1.5"/>
+        <!-- горизонтальные гридлинии по потолку -->
+        <g stroke="var(--rule)" stroke-dasharray="3 4">
+          <line x1="90" y1="295" x2="700" y2="295"/>
+          <line x1="90" y1="190" x2="700" y2="190"/>
+          <line x1="90" y1="145" x2="700" y2="145"/>
+          <line x1="90" y1="40" x2="700" y2="40"/>
+        </g>
+        <g font-size="12" fill="var(--ink-3)" text-anchor="end">
+          <text x="82" y="349">500x</text>
+          <text x="82" y="299">1 000x</text>
+          <text x="82" y="194">5 000x</text>
+          <text x="82" y="149">10 000x</text>
+          <text x="82" y="44">50 000x</text>
+        </g>
+        <text x="30" y="200" font-size="12" fill="var(--ink-2)" transform="rotate(-90 30 200)" text-anchor="middle" font-weight="600">Потолок, ставок (лог)</text>
+        <g font-size="12" fill="var(--ink-3)" text-anchor="middle">
+          <text x="150" y="365">низкая</text>
+          <text x="270" y="365">ниже сред.</text>
+          <text x="390" y="365">средняя</text>
+          <text x="510" y="365">высокая</text>
+          <text x="630" y="365">экстрем.</text>
+        </g>
+        <text x="395" y="392" font-size="12" fill="var(--ink-2)" text-anchor="middle" font-weight="600">Волатильность →</text>
+        <!-- точки -->
+        <g font-size="12.5" font-weight="600">
+          <circle cx="150" cy="314" r="8" fill="var(--s3)"/><text x="162" y="310" fill="var(--ink)">Классические линии</text><text x="162" y="326" fill="var(--ink-3)" font-weight="400" font-size="11">частые мелкие выплаты</text>
+          <circle cx="270" cy="250" r="8" fill="var(--s1)"/><text x="282" y="246" fill="var(--ink)">Hold &amp; Win</text><text x="282" y="262" fill="var(--ink-3)" font-weight="400" font-size="11">респины, джекпот-потолок</text>
+          <circle cx="390" cy="190" r="8" fill="var(--s2)"/><text x="402" y="186" fill="var(--ink)">Ways / 243</text><text x="402" y="202" fill="var(--ink-3)" font-weight="400" font-size="11">выплата в любом месте</text>
+          <circle cx="455" cy="145" r="8" fill="var(--s4)"/><text x="467" y="141" fill="var(--ink)">Cluster pays</text><text x="467" y="157" fill="var(--ink-3)" font-weight="400" font-size="11">группы символов</text>
+          <circle cx="510" cy="100" r="8" fill="var(--s5)"/><text x="400" y="96" fill="var(--ink)" text-anchor="end">Megaways →</text>
+          <circle cx="630" cy="40" r="8" fill="var(--neg)"/><text x="618" y="36" fill="var(--ink)" text-anchor="end">Экстрим + бай-бонус</text>
+        </g>
+      </svg>
+      <figcaption>Карта редакции по открытым описаниям релизов студий Pragmatic Play, Big Time Gaming, Push Gaming, Nolimit City и других, 2026 год. Положение точек — ориентир по типу механики, не оценка конкретного тайтла.</figcaption>
+      <div class="lgt-mirror">
+        <table>
+          <caption>Те же шесть механик числами</caption>
+          <thead><tr><th>Тип механики</th><th>Волатильность</th><th>Потолок, ставок</th><th>Частота бонуса</th></tr></thead>
+          <tbody>
+            <tr><td><span class="lgt-tag b">Классические линии</span></td><td>низкая</td><td class="lgt-n">500–1 000x</td><td class="lgt-n">1 из 120–180</td></tr>
+            <tr><td><span class="lgt-tag a">Hold &amp; Win</span></td><td>ниже средней</td><td class="lgt-n">≈ 2 000x</td><td class="lgt-n">1 из 120–250</td></tr>
+            <tr><td><span class="lgt-tag a">Ways / 243</span></td><td>средняя</td><td class="lgt-n">≈ 5 000x</td><td class="lgt-n">1 из 150–250</td></tr>
+            <tr><td><span class="lgt-tag c">Cluster pays</span></td><td>средняя–высокая</td><td class="lgt-n">≈ 10 000x</td><td class="lgt-n">1 из 200–350</td></tr>
+            <tr><td><span class="lgt-tag d">Megaways</span></td><td>высокая</td><td class="lgt-n">10 000–50 000x</td><td class="lgt-n">1 из 250–400</td></tr>
+            <tr><td><span class="lgt-tag e">Экстрим + бай-бонус</span></td><td>экстремальная</td><td class="lgt-n">до 50 000x+</td><td class="lgt-n">1 из 300–500</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+
+    <p>Карта объясняет, почему два автомата с одинаковым RTP ощущаются по-разному. Возврат у них равный на дистанции, но распределён иначе: в нижнем левом углу он приходит частыми мелкими суммами, в правом верхнем — редкими крупными. Список, который ставит такие тайтлы рядом только из-за совпадения RTP, скрывает главное различие. Дальше разобраны сами метрики — сначала отдача, затем риск и потолок, затем механики и происхождение.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="rtp">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 2 · отдача</p>
+    <h2>Отдача: RTP, его версия и почему теоретическое число не описывает вечер</h2>
+    <p class="lgt-answer">RTP (return to player) — доля ставок, которую автомат возвращает игрокам на бесконечной дистанции. Значение 96 % означает, что из каждых условных 100 ₽ оборота 96 ₽ возвращаются выигрышами, а 4 ₽ остаются как преимущество заведения. Это параметр математической модели, рассчитанный на миллионы раундов, а не прогноз конкретной сессии.</p>
+    <p>Из определения следуют три вещи, которые чаще всего теряются при чтении списка. Первая: RTP ничего не говорит о том, как возврат распределён во времени — за это отвечает волатильность из следующего раздела. Вторая: на коротком отрезке фактический результат отклоняется от теоретического в обе стороны, и чем выше волатильность, тем дольше держится отклонение. Третья: разница в один процентный пункт на дистанции заметна — при обороте 50&nbsp;000 ₽ каждый процент RTP стоит примерно 500 ₽ ожидаемой разницы, но заметить её в пределах вечера нельзя.</p>
+    <p>Отдельная ловушка — <strong>версия RTP</strong>. Крупные студии выпускают один автомат в нескольких математических сборках с разным возвратом, а оператор при подключении выбирает, какую поставить. У Pragmatic Play и Playson разброс доходит до шести пунктов: одна и та же игра встречается в версиях 96,5&nbsp;%, 95,5&nbsp;%, 94,0&nbsp;% и ниже. Внешне тайтл не отличается. Действующее значение написано только в правилах самой игры, в строке возврата. Если в топе стоит RTP без пометки версии, он относится к эталонной сборке провайдера, а не обязательно к той, что подключена у оператора. Схема ниже показывает типовые уровни возврата на обрезанной шкале 90–99&nbsp;% и диапазон, который студия закладывает в версии одной игры.</p>
+
+    <figure class="lgt-plate" id="plate-rtp">
+      <svg viewBox="0 0 760 320" role="img" aria-labelledby="rtp-t rtp-d">
+        <title id="rtp-t">Уровни RTP на обрезанной шкале от 90 до 99 процентов</title>
+        <desc id="rtp-d">Горизонтальные полосы показывают типовые значения RTP: заниженная версия, стандартная, высокая, а также четыре версии одной игры от 90 до 96,5 процента.</desc>
+        <!-- шкала -->
+        <g font-size="11" fill="var(--ink-3)" text-anchor="middle">
+          <text x="110" y="300">90%</text><text x="240" y="300">92%</text><text x="370" y="300">94%</text><text x="500" y="300">96%</text><text x="630" y="300">98%</text><text x="695" y="300">99%</text>
+        </g>
+        <g stroke="var(--rule)"><line x1="110" y1="30" x2="110" y2="285"/><line x1="240" y1="30" x2="240" y2="285"/><line x1="370" y1="30" x2="370" y2="285"/><line x1="500" y1="30" x2="500" y2="285"/><line x1="630" y1="30" x2="630" y2="285"/></g>
+        <!-- полосы: x0=110 (90%), шаг 65px на 1% -->
+        <g font-size="12.5" font-weight="600" fill="var(--on-navy)">
+          <rect x="110" y="40" width="130" height="30" rx="3" fill="var(--neg)"/><text x="120" y="60">92,0%</text>
+          <text x="248" y="60" fill="var(--ink-2)" font-weight="400" font-size="11.5">заниженная версия — ниже рынка</text>
+          <rect x="110" y="86" width="260" height="30" rx="3" fill="var(--s4)"/><text x="120" y="106">94,0%</text>
+          <text x="378" y="106" fill="var(--ink-2)" font-weight="400" font-size="11.5">бюджетная сборка</text>
+          <rect x="110" y="132" width="390" height="30" rx="3" fill="var(--s2)"/><text x="120" y="152">96,0%</text>
+          <text x="508" y="152" fill="var(--ink-2)" font-weight="400" font-size="11.5">стандарт большинства релизов</text>
+          <rect x="110" y="178" width="455" height="30" rx="3" fill="var(--s3)"/><text x="120" y="198">97,0%</text>
+          <text x="573" y="198" fill="var(--ink-2)" font-weight="400" font-size="11.5">высокая отдача</text>
+        </g>
+        <line x1="110" y1="222" x2="700" y2="222" stroke="var(--rule)"/>
+        <text x="110" y="244" font-size="12" font-weight="600" fill="var(--ink)">Одна игра, четыре версии студии:</text>
+        <g font-size="11.5" fill="var(--ink-2)">
+          <circle cx="110" cy="266" r="5" fill="var(--s1)"/><text x="122" y="270">90,5%</text>
+          <circle cx="242" cy="266" r="5" fill="var(--s1)"/><text x="254" y="270">94,0%</text>
+          <circle cx="371" cy="266" r="5" fill="var(--s1)"/><text x="383" y="270">95,5%</text>
+          <circle cx="403" cy="266" r="5" fill="var(--s1)"/><text x="415" y="270">96,5% — разброс до 6 пунктов</text>
+        </g>
+      </svg>
+      <figcaption>Схема редакции: типовые уровни возврата и диапазон версий одной игры по открытым правилам студий, 2026 год. Проценты условные, под иллюстрацию механики версий, не данные конкретного тайтла.</figcaption>
+      <div class="lgt-mirror">
+        <table>
+          <caption>Те же значения RTP</caption>
+          <thead><tr><th>Уровень</th><th>RTP</th><th>Что означает в списке</th></tr></thead>
+          <tbody>
+            <tr><td><span class="lgt-tag e">Заниженная версия</span></td><td class="lgt-n">92,0%</td><td>сборка ниже рынка, повод проверить правила игры</td></tr>
+            <tr><td><span class="lgt-tag c">Бюджетная</span></td><td class="lgt-n">94,0%</td><td>встречается у части операторов той же игры</td></tr>
+            <tr><td><span class="lgt-tag a">Стандарт</span></td><td class="lgt-n">96,0%</td><td>эталонная сборка большинства релизов</td></tr>
+            <tr><td><span class="lgt-tag b">Высокая</span></td><td class="lgt-n">97,0%+</td><td>повышенная отдача, подтверждается правилами</td></tr>
+            <tr><td>Версии одной игры</td><td class="lgt-n">90,5 / 94,0 / 95,5 / 96,5%</td><td>выбор версии — за оператором, не за студией</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>RTP</dt><dd>доля возврата на бесконечной дистанции, параметр модели.</dd>
+        <dt>Версия RTP</dt><dd>одна из сборок игры; действующую выбирает оператор.</dd>
+        <dt>Преимущество заведения</dt><dd>дополнение RTP до 100 %, доход оператора на обороте.</dd>
+        <dt>Paytable</dt><dd>таблица выплат в правилах игры, где указан RTP версии.</dd>
+      </dl>
+    </div>
+    <p>Практический вывод для чтения списка: RTP имеет смысл только вместе с пометкой версии и ссылкой на правила игры. Число без источника — это обещание, а не метрика. Проверить его можно в одном месте: открыть автомат в демо и найти строку возврата в разделе правил.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="risk">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 3 · риск</p>
+    <h2>Риск: волатильность, дисперсия и частота попаданий</h2>
+    <p class="lgt-answer">Волатильность описывает, насколько сильно фактический результат отклоняется от среднего в пределах сессии. При одинаковом RTP автомат с высокой волатильностью платит реже и крупнее, с низкой — чаще и мельче. Это второй по важности столбец любого списка после отдачи, и часто он важнее её.</p>
+    <p>Строгая форма волатильности — <strong>дисперсия</strong>, статистический разброс выплат вокруг ожидания. В маркетинге студии её огрубляют до пяти ступеней от «низкой» до «экстремальной», но смысл один: это ширина коридора, в котором гуляет результат. У автомата с низкой дисперсией банкролл тает плавно; у экстремального он может обнулиться за сотню вращений, а может выстрелить множителем в тысячи ставок. Среднее у обоих одинаковое, разным будет путь к нему.</p>
+    <p>Третья метрика риска — <strong>частота попаданий</strong> (hit frequency): доля вращений, которые дают хоть какую-то выплату, включая возврат ставки или меньше неё. Значение 25&nbsp;% означает, что платит примерно каждое четвёртое вращение. Высокая частота попаданий не делает игру щедрой: она часто сочетается с мелкими выплатами ниже ставки и низким потолком. Отдельно считают частоту входа в бонус — она заметно ниже, обычно от одного раза на 120 до одного на 400 вращений. Ниже — ступени волатильности и что каждая означает для сессии.</p>
+    <div class="lgt-table">
+      <table>
+        <caption>Пять ступеней волатильности в карточках студий</caption>
+        <thead><tr><th>Ступень</th><th>Частота попаданий</th><th>Характер выплат</th><th>Поведение банкролла</th></tr></thead>
+        <tbody>
+          <tr><td>Низкая</td><td class="lgt-n">28–45%</td><td>частые, мелкие</td><td>тает плавно, редкие просадки</td></tr>
+          <tr><td>Ниже средней</td><td class="lgt-n">24–30%</td><td>частые, умеренные</td><td>ровное с короткими паузами</td></tr>
+          <tr><td>Средняя</td><td class="lgt-n">20–26%</td><td>смешанные</td><td>заметные колебания</td></tr>
+          <tr><td>Высокая</td><td class="lgt-n">18–23%</td><td>редкие, крупные</td><td>длинные пустые серии</td></tr>
+          <tr><td>Экстремальная</td><td class="lgt-n">15–20%</td><td>очень редкие, очень крупные</td><td>резкие обвалы и всплески</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>Волатильность</dt><dd>разброс результата в сессии при фиксированном RTP.</dd>
+        <dt>Дисперсия</dt><dd>строгая мера того же разброса, ширина коридора выплат.</dd>
+        <dt>Hit frequency</dt><dd>доля вращений с любой выплатой.</dd>
+        <dt>Частота бонуса</dt><dd>как часто запускается бонусный раунд, отдельно от hit frequency.</dd>
+      </dl>
+    </div>
+    <p>В списке, собранном под короткую сессию с небольшим банком, вес смещают к низкой волатильности и высокой частоте попаданий. В списке под охоту за крупным множителем — к высокой волатильности и большому потолку. Поэтому один и тот же автомат честно занимает верх в одном топе и низ в другом; противоречия тут нет, пока обе подборки называют свой критерий.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="cap">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 4 · потолок</p>
+    <h2>Потолок: max win в ставках и как он обрезает редкий крупный занос</h2>
+    <p class="lgt-answer">Max win — максимальный выигрыш одного оплаченного раунда, выраженный в единицах ставки. Запись «макс. 5000x» означает, что результат раунда ограничен пятью тысячами ставок при любом номинале. Это верхняя граница механики, а не редкий рекорд и не лимит оператора на вывод.</p>
+    <p>Потолок задают в ставках, а не в рублях, потому что он одинаков для любого размера ставки. При ставке 20 ₽ потолок 5000x равен 100&nbsp;000 ₽, при ставке 100 ₽ — 500&nbsp;000 ₽. Когда расчётная выплата упирается в потолок, игра прекращает начисление и завершает раунд на этой сумме, даже если множители внутри бонуса продолжали бы расти. У автоматов с экстремальной волатильностью потолок — не украшение витрины, а реальная граница: почти весь «хвост» распределения, ради которого в такие игры и заходят, упирается именно в него.</p>
+    <p>Потолок игры нужно отличать от двух соседних чисел, которые в списках иногда смешивают. Первое — лимит оператора на вывод за период: сколько со счёта можно забрать за день, неделю или месяц. Оно записано в правилах кассы, а не в карточке автомата, и к механике отношения не имеет. Второе — максимальная выплата по бонусу, потолок выигрыша с бонусных средств, который часто задан как множитель суммы бонуса, например x5 или x20. Все три ограничения действуют независимо, и крупный множитель в игре не гарантирует, что всю сумму получится вывести одним платежом.</p>
+    <div class="lgt-aside">
+      <h3>Три потолка, которые путают</h3>
+      <dl>
+        <dt>Max win игры</dt><dd>граница одного раунда в ставках, задана студией.</dd>
+        <dt>Лимит вывода</dt><dd>сколько забрать за период, задан оператором в правилах кассы.</dd>
+        <dt>Потолок бонуса</dt><dd>максимум выигрыша с бонусных денег, часто множитель суммы бонуса.</dd>
+      </dl>
+    </div>
+    <p>В строке списка max win читается в паре с волатильностью. Высокий потолок при низкой волатильности встречается редко и обычно означает, что крупное событие почти недостижимо. Высокий потолок при экстремальной волатильности — честная заявка на редкий, но возможный крупный результат. Потолок без указания волатильности сам по себе не значит почти ничего.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="mech">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 5 · механики</p>
+    <h2>Механики барабанов: линии, Ways, Megaways, cluster pays и Hold &amp; Win</h2>
+    <p class="lgt-answer">Тип механики — это способ, которым игра засчитывает комбинацию. Он определяет и число возможных совпадений, и характер распределения выплат, поэтому в карте из первого раздела механика задаёт сразу обе координаты. Пять форм покрывают почти весь рынок.</p>
+    <p><strong>Фиксированные линии</strong> — исходная механика: комбинация засчитывается по заранее заданным линиям, обычно от 10 до 50, слева направо. Чем больше линий, тем чаще мелкие попадания; волатильность у линейных автоматов, как правило, низкая. <strong>Ways-механика</strong> (чаще всего «243 способа» или «1024 способа») отменяет линии: символ засчитывается, если он стоит на соседних барабанах в любом ряду. Способов становится больше, выплаты — крупнее и реже.</p>
+    <p><strong>Megaways</strong> — запатентованный движок студии Big Time Gaming, который другие провайдеры берут по лицензии. На каждом вращении число символов в шести барабанах меняется от двух до семи, и количество способов пересчитывается, доходя до 117&nbsp;649. Переменная геометрия даёт высокую волатильность и высокий потолок. <strong>Cluster pays</strong> считает не линии и не способы, а группы одинаковых символов, соприкасающихся по стороне; обычно работает в связке с каскадом, когда выигравшие символы исчезают, а на их место падают новые. <strong>Hold&nbsp;&amp;&nbsp;Win</strong> (встречается под именами Hold the Spin, Lightning, респин-механика) выделяет специальные символы с суммами и запускает серию респинов, которая копит их до заполнения поля; потолок у таких игр чаще зафиксирован джекпотом, а не множителем бесконечного бонуса.</p>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>Линии</dt><dd>заданные дорожки для комбинаций, исходная механика.</dd>
+        <dt>Ways</dt><dd>выплата за символы на соседних барабанах в любом ряду.</dd>
+        <dt>Megaways</dt><dd>движок BTG с переменным числом способов до 117 649.</dd>
+        <dt>Cluster pays</dt><dd>выплата за группу соприкасающихся символов, обычно с каскадом.</dd>
+        <dt>Hold &amp; Win</dt><dd>респины до заполнения поля, потолок задан джекпотом.</dd>
+      </dl>
+    </div>
+    <p>Зная механику, можно предсказать поведение автомата до первого вращения — и проверить, совпадает ли ярлык волатильности в списке с тем, что обещает форма. Линейный автомат с пометкой «экстремальная» или Megaways с пометкой «низкая» — повод перепроверить карточку: ярлыки иногда ставят на глаз.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="buy">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 6 · покупка бонуса</p>
+    <h2>Бай-бонус: кнопка покупки входа и что она делает с дисперсией</h2>
+    <p class="lgt-answer">Бай-бонус (buy feature, bonus buy) — опция, которая за фиксированную цену сразу запускает бонусный раунд вместо ожидания скаттеров. Цена задаётся в ставках, обычно от 75 до 100, и показывается рядом с кнопкой. Покупка меняет не вероятности внутри раунда, а способ в него попасть.</p>
+    <p>Распространённое заблуждение — что покупка повышает шанс на крупный результат. Математика бонусного раунда при входе через покупку та же, что при обычном запуске: те же множители, та же геометрия, тот же потолок. RTP режима покупки у большинства студий отличается от базового на доли процента в любую сторону и указан в правилах отдельной строкой. Что покупка меняет точно — это дисперсию на дистанции: серия дорогих входов подряд сжимает те же события во времени и делает разброс резче, чем те же деньги, растянутые на обычные вращения.</p>
+    <p>Для чтения списка важны две пометки. Первая — цена покупки: при цене 100 ставок один вход стоит сто обычных вращений, и банкролл под такой режим нужен кратно больше. Вторая — доступность: в Великобритании покупка бонуса запрещена Комиссией по азартным играм с 2021 года, в Нидерландах — правилами Kansspelautoriteit, и для сборок этих рынков кнопки нет вовсе. Поэтому один тайтл в списках для разных юрисдикций отличается набором функций, хотя называется одинаково.</p>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>Buy feature</dt><dd>покупка входа в бонус за фиксированную цену в ставках.</dd>
+        <dt>RTP покупки</dt><dd>отдельное значение возврата для режима покупки.</dd>
+        <dt>Скаттер</dt><dd>символ, запускающий бонус при обычном вращении.</dd>
+        <dt>Запрет buy feature</dt><dd>правило регуляторов Великобритании и Нидерландов.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="lgt-part" id="origin">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 7 · происхождение</p>
+    <h2>Происхождение релиза: студия, сертификат лаборатории и домен сервера</h2>
+    <p class="lgt-answer">Третий слой списка отвечает на вопрос, можно ли доверять числам из первых двух. Он складывается из трёх сущностей: кто студия-разработчик, кем проверен генератор случайных чисел и с какого сервера автомат на самом деле загружается у оператора.</p>
+    <p><strong>Провайдер</strong> (студия) — компания, которая разработала математику и держит игровой сервер. Результат каждого вращения считает серверный <strong>генератор случайных чисел</strong> (RNG), а клиент в браузере только рисует барабаны. Поэтому «подкрутить» автомат под отдельного игрока на стороне оформления нельзя: клиент не знает, кто перед ним. Репутация студии в списке — это не маркетинг, а указание на то, чья математика стоит за тайтлом и чей сервер его обслуживает.</p>
+    <p><strong>Сертификат лаборатории</strong> подтверждает, что RNG и заявленный RTP проверены независимой стороной. На рынке четыре крупные лаборатории: GLI (Gaming Laboratories International), eCOGRA, iTech Labs и BMM Testlabs. Проверка идёт по стандартам, из которых самый известный — GLI-19 для интерактивных игровых систем. Сертификат относится к конкретной версии игры и к конкретному RNG; к скриптовой копии с переписанной математикой он не имеет отношения, даже если на странице показан логотип лаборатории. Третья сущность — <strong>домен игрового сервера</strong>: оригинальный тайтл грузится в кадре с адреса провайдера или его официального агрегатора, у копии адрес случайный. Проверяется это за минуту — открытием игры в отдельной вкладке или просмотром адреса кадра в инструментах разработчика.</p>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>Провайдер</dt><dd>студия-разработчик и держатель игрового сервера.</dd>
+        <dt>RNG</dt><dd>серверный генератор случайных чисел, считает результат.</dd>
+        <dt>Лаборатория</dt><dd>GLI, eCOGRA, iTech Labs, BMM — независимый аудит RNG и RTP.</dd>
+        <dt>Домен сервера</dt><dd>адрес кадра игры; у оригинала принадлежит провайдеру.</dd>
+      </dl>
+    </div>
+    <p>Эти три сущности образуют цепочку доверия: студия задаёт математику, лаборатория её проверяет, домен подтверждает, что у оператора стоит именно проверенная версия. Если в списке указан RTP и сертификат, но автомат грузится с чужого домена, проверка не относится к тому, во что играет пользователь.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="proof">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Раздел 8 · проверка до ставки</p>
+    <h2>Демо и провабли фэйр: два способа проверить игру заранее</h2>
+    <p class="lgt-answer">До ставки у игрока есть два независимых инструмента проверки. Демо-режим позволяет открыть ту же игру на условные кредиты и прочитать её правила. Провабли фэйр даёт математически проверить, что результат раунда не подменили. Первый отвечает на вопрос «что это за игра», второй — «честен ли был конкретный раунд».</p>
+    <p><strong>Демо</strong> — та же игра, загруженная с того же сервера провайдера, но с балансом из условных кредитов. В демо видно главное, что нужно для чтения списка: действующую версию RTP в разделе правил, таблицу выплат, тип механики, цену бай-бонуса и поведение волатильности на собственном опыте. Оценить по демо «идёт игра или нет» нельзя: сотня вращений ничего не говорит о модели, рассчитанной на миллионы. Демо проверяет паспорт автомата, а не удачу.</p>
+    <p><strong>Провабли фэйр</strong> (provably fair) — механизм, распространённый у криптовалютных игр. До раунда сервер показывает хеш своего зерна (server seed), игрок добавляет своё (client seed), а после раунда сервер раскрывает исходное зерно, и игрок может сам пересчитать результат и сверить хеш. Если зерно не подменили, числа сойдутся. Это другой путь доверия, чем сертификат лаборатории: там гарантию даёт аудитор, здесь — открытая проверка самим игроком. Два механизма не исключают друг друга и отвечают за разное: сертификат — за то, что модель в принципе честная, провабли фэйр — за то, что честным был отдельный раунд.</p>
+    <div class="lgt-aside">
+      <h3>Термины раздела</h3>
+      <dl>
+        <dt>Демо</dt><dd>игра на условные кредиты с теми же правилами и RTP.</dd>
+        <dt>Provably fair</dt><dd>проверка честности раунда игроком через хеш зерна.</dd>
+        <dt>Server seed / client seed</dt><dd>зёрна сервера и игрока, из которых считается результат.</dd>
+        <dt>Хеш</dt><dd>отпечаток зерна, показанный до раунда для последующей сверки.</dd>
+      </dl>
+    </div>
+    <p>Связка из восьми разделов читается так: математика (RTP и версия) и риск (волатильность, частота, потолок) описывают, чего ждать; механика объясняет, почему; происхождение и проверка отвечают, можно ли верить числам. Список, в котором есть все три слоя, читается без доверия к автору; список, где оставили только места и звёзды, проверить нечем.</p>
+  </div>
+</section>
+
+<section class="lgt-part" id="az">
+  <div class="lgt-wide">
+    <p class="lgt-kicker">Словарь · 18 статей</p>
+    <h2>Короткий словарь: термины рейтинга одной строкой</h2>
+    <p>Сводка терминов из разделов выше в алфавитном порядке — для быстрой сверки при чтении чужого списка.</p>
+    <div class="lgt-defs">
+      <div class="lgt-def" id="d-buy"><h3>Buy feature <span>покупка бонуса</span></h3><p>Опция входа в бонусный раунд за фиксированную цену в ставках. Меняет дисперсию, а не вероятности внутри раунда. Запрещена в Великобритании и Нидерландах.</p></div>
+      <div class="lgt-def" id="d-cluster"><h3>Cluster pays <span>кластеры</span></h3><p>Выплата за группу одинаковых символов, соприкасающихся сторонами, обычно в связке с каскадом исчезающих символов.</p></div>
+      <div class="lgt-def" id="d-demo"><h3>Демо</h3><p>Та же игра на условные кредиты. Показывает версию RTP, таблицу выплат и механику; для оценки удачи бесполезно.</p></div>
+      <div class="lgt-def" id="d-dispersion"><h3>Дисперсия</h3><p>Строгая мера разброса выплат вокруг ожидания. Бытовое имя — волатильность, огрублённая до пяти ступеней.</p></div>
+      <div class="lgt-def" id="d-gli"><h3>GLI-19</h3><p>Стандарт лаборатории Gaming Laboratories International для интерактивных игровых систем, по которому проверяют RNG.</p></div>
+      <div class="lgt-def" id="d-hit"><h3>Hit frequency <span>частота попаданий</span></h3><p>Доля вращений с любой выплатой, включая возврат ниже ставки. Отдельно считают более низкую частоту входа в бонус.</p></div>
+      <div class="lgt-def" id="d-holdwin"><h3>Hold &amp; Win <span>респины</span></h3><p>Серия респинов, копящая символы с суммами до заполнения поля. Потолок обычно зафиксирован джекпотом.</p></div>
+      <div class="lgt-def" id="d-lab"><h3>Лаборатория</h3><p>Независимый аудитор RNG и RTP: GLI, eCOGRA, iTech Labs, BMM Testlabs. Сертификат привязан к версии игры.</p></div>
+      <div class="lgt-def" id="d-maxwin"><h3>Max win <span>потолок</span></h3><p>Максимум одного раунда в ставках. Отличается от лимита вывода оператора и от потолка бонуса.</p></div>
+      <div class="lgt-def" id="d-megaways"><h3>Megaways</h3><p>Движок Big Time Gaming с переменным числом символов и способов до 117 649. Высокая волатильность, высокий потолок.</p></div>
+      <div class="lgt-def" id="d-paytable"><h3>Paytable <span>таблица выплат</span></h3><p>Раздел правил игры с выплатами за комбинации и строкой действующего RTP. Единственный достоверный источник версии.</p></div>
+      <div class="lgt-def" id="d-fair"><h3>Provably fair <span>провабли фэйр</span></h3><p>Проверка честности раунда игроком через хеш зерна сервера и зерно игрока. Распространён у криптовалютных игр.</p></div>
+      <div class="lgt-def" id="d-provider"><h3>Провайдер <span>студия</span></h3><p>Разработчик математики и держатель игрового сервера. Определяет, чья модель стоит за тайтлом.</p></div>
+      <div class="lgt-def" id="d-rng"><h3>RNG</h3><p>Серверный генератор случайных чисел. Считает результат на сервере; клиент только отображает барабаны.</p></div>
+      <div class="lgt-def" id="d-rtp"><h3>RTP</h3><p>Доля возврата на бесконечной дистанции. Параметр модели, не прогноз сессии; читается с пометкой версии.</p></div>
+      <div class="lgt-def" id="d-version"><h3>Версия RTP</h3><p>Одна из сборок игры с разным возвратом. Действующую выбирает оператор; разброс доходит до шести пунктов.</p></div>
+      <div class="lgt-def" id="d-volatility"><h3>Волатильность</h3><p>Разброс результата в пределах сессии при фиксированном RTP. Пять ступеней от низкой до экстремальной.</p></div>
+      <div class="lgt-def" id="d-ways"><h3>Ways <span>способы</span></h3><p>Выплата за символы на соседних барабанах в любом ряду, без фиксированных линий. Чаще всего 243 или 1024 способа.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lgt-part" id="faq">
+  <div class="lgt-read">
+    <p class="lgt-kicker">Вопросы</p>
+    <h2>Вопросы к словарю топ-листов, которые остаются после разделов</h2>
+    <details class="lgt-q"><summary>Что в топе игр важнее — высокий RTP или низкая волатильность?</summary><div class="lgt-a"><p>Эти два числа отвечают на разные вопросы и не заменяют друг друга. RTP описывает долю возврата на длинной дистанции в миллионы вращений, волатильность — разброс результата в пределах одной сессии. Автомат с RTP 96,5 % и экстремальной волатильностью на коротком отрезке ведёт себя беднее, чем автомат с RTP 95,5 % и низкой волатильностью, потому что в первом почти весь возврат заперт в редких крупных событиях. В топе, собранном под короткую сессию, вес смещают к волатильности и частоте попаданий; в топе под отыгрыш бонуса — к RTP и потолку ставки. Поэтому колонку с весами нужно читать раньше, чем сам список.</p></div></details>
+    <details class="lgt-q"><summary>Почему у одной игры бывает несколько значений RTP?</summary><div class="lgt-a"><p>Студии выпускают один и тот же автомат в нескольких математических сборках, и оператор при подключении выбирает, какую поставить. У Pragmatic Play и Playson расхождение между версиями доходит до шести процентных пунктов — например, 96,5 %, 95,5 %, 94,0 % и ниже у одной игры. Внешне тайтл не меняется: те же символы, та же анимация, тот же максимум. Действующее значение написано в разделе правил самой игры, под строкой Return to player или «теоретический возврат». Если в топе указан RTP без пометки версии, число относится к эталонной сборке провайдера, а не обязательно к той, что стоит у конкретного оператора.</p></div></details>
+    <details class="lgt-q"><summary>Max win указан в ставках — это сколько в рублях?</summary><div class="lgt-a"><p>Потолок выигрыша в карточке игры задаётся в единицах ставки, а не в валюте, потому что он одинаков для любого номинала. Запись «макс. 5000x» означает, что максимальный результат одного оплаченного раунда ограничен пятью тысячами ставок: при ставке 20 ₽ это 100 000 ₽, при ставке 100 ₽ — 500 000 ₽. Когда расчётный выигрыш упирается в потолок, игра прекращает начисление и завершает раунд на этой сумме, даже если механика продолжала бы умножать. Отдельно от потолка игры у оператора бывает лимит на вывод за период — это другое число, и в карточке автомата его нет.</p></div></details>
+    <details class="lgt-q"><summary>Megaways — это отдельная игра или механика?</summary><div class="lgt-a"><p>Megaways — это запатентованный движок барабанов студии Big Time Gaming, который другие провайдеры берут по лицензии. На каждом вращении число символов в шести барабанах меняется от двух до семи, и количество способов собрать комбинацию пересчитывается, доходя до 117 649. Это механика, а не конкретный тайтл: под маркой Megaways выходят сотни разных игр у разных студий. Общее у них одно — переменное число линий и, как следствие, высокая волатильность и высокий потолок. Поэтому в карте механик Megaways-релизы сдвинуты в правый верхний угол: редкие, но крупные события.</p></div></details>
+    <details class="lgt-q"><summary>Бай-бонус увеличивает шанс на крупный занос?</summary><div class="lgt-a"><p>Нет. Кнопка покупки бонуса меняет не вероятности внутри бонусного раунда, а способ в него попасть: вместо ожидания трёх скаттеров игрок платит фиксированную цену, обычно от 75 до 100 ставок, и входит в раунд сразу. Математика самого раунда остаётся прежней, а RTP режима покупки у большинства студий на доли процента отличается от базового в любую сторону. Что покупка меняет точно — это дисперсию: короткие серии дорогих покупок дают более резкий разброс, чем те же деньги, растянутые на обычные вращения. В Великобритании и Нидерландах покупка бонуса запрещена правилами регулятора, поэтому в сборках для этих рынков кнопки нет.</p></div></details>
+    <details class="lgt-q"><summary>Как понять, что игра в топе запущена с сервера оригинальной студии?</summary><div class="lgt-a"><p>Оригинальный тайтл загружается в кадре (iframe) с домена провайдера или его официального агрегатора, а в меню игры есть страница правил с таблицей выплат и указанием RTP. Проверить адрес кадра можно через инструменты разработчика браузера или открыв игру в отдельной вкладке. У скриптовой копии домен случайный, таблица выплат урезана или отсутствует, логотип студии часто искажён, а заявленный в списке RTP проверить негде. Копия опасна тем, что её математику переписали, и ни сертификат лаборатории, ни заявленный возврат к ней не относятся.</p></div></details>
+    <details class="lgt-q"><summary>Чем провабли фэйр отличается от сертификата лаборатории?</summary><div class="lgt-a"><p>Это два разных способа доказать честность результата. Сертификат независимой лаборатории — GLI, eCOGRA, iTech Labs или BMM Testlabs — подтверждает, что генератор случайных чисел прошёл проверку по стандарту вроде GLI-19 и что заявленный RTP соответствует математике; доверие здесь к аудитору. Провабли фэйр (provably fair) переносит проверку на игрока: до раунда сервер показывает хеш своего зерна, игрок добавляет своё, а после раунда может сам пересчитать результат и убедиться, что зерно не подменили. Первый механизм распространён у игр с лицензией, второй — у криптовалютных игр, и одно не отменяет другого.</p></div></details>
+  </div>
+</section>
+
+<section class="lgt-care">
+  <div class="lgt-read">
+    <p><strong>18+.</strong> Справочник объясняет термины, по которым читают рейтинги игр, и не призывает делать ставки. Азартная игра — это расход с заранее заложенным преимуществом заведения, а не способ заработка. Если игра перестала быть развлечением, помогают линии поддержки и инструменты самоограничения: лимит депозита, пауза, самоисключение.</p>
+  </div>
+</section>
+
+<section class="lgt-channel" id="channel">
+  <div class="lgt-read">
+    <p class="lgt-kicker">Обновления</p>
+    <h2>Пересмотр словаря и канал с разбором новых релизов</h2>
+    <p>Словарь правится, когда студии меняют стандарты: появляются новые версии RTP у вышедших игр, регуляторы расширяют запрет бай-бонуса, лаборатории обновляют стандарты проверки RNG. Разборы свежих релизов и изменения в терминах выходят в телеграм-канале редакции. Это единственная внешняя ссылка на странице: партнёрских ссылок, редиректов и переходов на другие сайты здесь нет.</p>
+    <a class="lgt-channel-link" href="https://t.me/top_casino_2027" rel="noopener" target="_blank">Канал редакции в Telegram</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="lgt-foot">
+  <div class="lgt-wide lgt-foot-grid">
+    <div>
+      <h3>Легенда таблицы</h3>
+      <p>Справочник терминов, по которым собирают и читают топы игр: отдача, риск, механики, происхождение. 2026 год.</p>
+      <p>Материал носит справочный характер и не является рекламой конкретных игр или операторов.</p>
+    </div>
+    <div>
+      <h3>Разделы</h3>
+      <p><a href="#map">Карта механик</a></p>
+      <p><a href="#rtp">Отдача и версии RTP</a></p>
+      <p><a href="#risk">Риск и частота</a></p>
+      <p><a href="#az">Словарь А–Я</a></p>
+    </div>
+    <div>
+      <h3>Редакция</h3>
+      <p>Редакция «Легенда таблицы»</p>
+      <p>Обновлено 1 октября 2026</p>
+      <p><a href="#channel">Канал и обновления словаря</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var btn=document.getElementById('lgt-toggle');
+  try{var saved=localStorage.getItem('lgt-theme');if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  if(btn){btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var next=cur==='dark'?'light':(cur==='light'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('lgt-theme',next);}catch(e){}
+  });}
+})();
+</script>
+</body>
+</html>
